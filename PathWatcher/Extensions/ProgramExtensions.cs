@@ -1,7 +1,7 @@
 ﻿using Commons.Models;
 using Microsoft.Extensions.Hosting;
 
-namespace FilesWatcher.Extensions
+namespace PathWatcher.Extensions
 {
     internal static class ProgramExtensions
     {

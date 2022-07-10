@@ -1,7 +1,7 @@
 ﻿using Commons.Extensions;
 using Commons.Interfaces;
 using Commons.Models;
-using FilesWatcher.Extensions;
+using PathWatcher.Extensions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Concurrent;

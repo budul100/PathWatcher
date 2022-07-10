@@ -2,7 +2,7 @@
 using CommandLine.Text;
 using Commons.Interfaces;
 using Commons.Models;
-using FilesWatcher.Extensions;
+using PathWatcher.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace FilesWatcher
+namespace PathWatcher
 {
     internal static class Program
     {
@@ -77,7 +77,7 @@ namespace FilesWatcher
             // Windows event logs only written for warning or error messages!
 
             logging
-                .AddEventLog(configure => configure.SourceName = nameof(FilesWatcher));
+                .AddEventLog(configure => configure.SourceName = nameof(PathWatcher));
         }
 
         private static void ConfigureServices(IServiceCollection services, Options options)
