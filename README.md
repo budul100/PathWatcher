@@ -1,1 +1,1 @@
-# FilesWatcher
+# PathWatcher
