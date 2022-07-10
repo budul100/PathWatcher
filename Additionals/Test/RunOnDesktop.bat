@@ -1,0 +1,1 @@
+..\..\_Release\FilesWatcher.exe -p C:\Users\mgr\Desktop -t -u C:\Users\mgr\Desktop\Success -i C:\Users\mgr\Desktop\Fail -c "C:\Program Files\ConEmu\ConEmu64.exe" -- -run echo $d\$f
