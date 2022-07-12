@@ -1,6 +1,7 @@
 ﻿using Commons.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -30,6 +31,13 @@ namespace PathWatcher.Extensions
                 : options.ExecuteArgsCollection.GetArguments();
 
             return result;
+        }
+
+        public static string GetCommand(this Options options)
+        {
+            var result = Path.GetFullPath(options.ExecuteCommand);
+
+            return "\"" + result + "\"";
         }
 
         #endregion Public Methods

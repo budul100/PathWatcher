@@ -1,8 +1,8 @@
 ﻿using Commons.Extensions;
 using Commons.Interfaces;
 using Commons.Models;
-using PathWatcher.Extensions;
 using Microsoft.Extensions.Logging;
+using PathWatcher.Extensions;
 using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -27,6 +27,7 @@ namespace ExecutorService
         private const int ExitCodeSuccess = 0;
 
         private readonly string arguments;
+        private readonly string command;
         private readonly ConcurrentQueue<string> executionQueue = new();
         private readonly ILogger<Executor> logger;
         private readonly Options options;
@@ -43,7 +44,9 @@ namespace ExecutorService
             this.options = options;
             this.logger = logger;
 
+            command = options.GetCommand();
             arguments = options.GetArguments();
+
             timeout = TimeSpan.FromSeconds(options.Timeout);
             delay = TimeSpan.FromMilliseconds(DelayInMilliSeconds);
         }
@@ -201,15 +204,15 @@ namespace ExecutorService
                 newValue: file);
 
             logger.LogDebug(
-                "The following command is called: \"{command}\" {arguments}",
-                options.ExecuteCommand,
+                "The following command is called: {command} {arguments}",
+                command,
                 currentArguments);
 
             var startInfo = new ProcessStartInfo
             {
                 Arguments = currentArguments,
                 CreateNoWindow = true,
-                FileName = "\"" + options.ExecuteCommand + "\"",
+                FileName = command,
                 UseShellExecute = false,
                 WindowStyle = ProcessWindowStyle.Minimized,
             };

@@ -109,7 +109,7 @@ namespace WatcherService
 
         private FileSystemWatcher GetWatcher()
         {
-            var watchPath = options.WatchPath.GetDirectory();
+            var watchPath = Path.GetFullPath(options.WatchPath.GetDirectory());
 
             if (!Directory.Exists(watchPath))
             {
@@ -132,14 +132,14 @@ namespace WatcherService
             {
                 logger.LogInformation(
                     "The system is watching {watchPath} for {watchType}.",
-                    result.Path,
+                    watchPath,
                     watchType);
             }
             else
             {
                 logger.LogInformation(
                     "The system is watching {watchPath} for {watchType} with filter {watchFilter}.",
-                    result.Path,
+                    watchPath,
                     watchType,
                     result.Filter);
             }
