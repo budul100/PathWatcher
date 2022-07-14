@@ -38,25 +38,13 @@ namespace Commons.Models
         public string DirectorySuccess { get; set; }
 
         [Value(index: 0,
-            Min = 1,
             Required = false,
             HelpText = "Arguments to be used with the execution command. All arguments " +
                 "must be put at the end of the line, starting with a double dash element " +
                 "(e.g. \"-c example.exe -- arg1, arg2\"). The following wildcards can be used " +
                 "be replaced with the found object: " + WildcardPath + "... full path, " +
-                WildcardDirectory + "... directory, " + WildcardFile + "... file name.\r\n\r\n" +
-                "This option cannot be used with the arguments (-a) option.")]
-        public IEnumerable<string> ExecuteArgsCollection { get; set; }
-
-        [Option(
-            shortName: 'a',
-            longName: "arguments",
-            Required = false,
-            HelpText = "Arguments to be used with the execution command. The following wildcards " +
-                "can be used be replaced with the found object: " + WildcardPath + "... full path, " +
-                WildcardDirectory + "... directory, " + WildcardFile + "... file name.\r\n\r\n" +
-                "This option cannot be used with the arguments after -- option.")]
-        public string ExecuteArgsText { get; set; }
+                WildcardDirectory + "... directory, " + WildcardFile + "... file name.")]
+        public IEnumerable<string> ExecuteArgs { get; set; }
 
         [Option(
             shortName: 'c',

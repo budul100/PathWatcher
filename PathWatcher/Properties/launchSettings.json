@@ -3,12 +3,12 @@
     "Watch files on desktop": {
       "commandName": "Executable",
       "executablePath": "..\\..\\..\\bin\\Debug\\net6.0\\PathWatcher.exe",
-      "commandLineArgs": "-p ..\\..\\..\\..\\_Test -l Debug -t -u %USERPROFILE%\\Desktop\\Success -i %USERPROFILE%\\Desktop\\Fail -c \"..\\..\\..\\..\\Additionals\\Test\\TestApp.exe\" -- -file $p"
+      "commandLineArgs": "-p %USERPROFILE%\\Desktop -l Debug -t -u %USERPROFILE%\\Desktop\\Success -i %USERPROFILE%\\Desktop\\Fail -c \"..\\..\\..\\..\\Additionals\\Test\\TestApp.exe\" -- -file $p"
     },
     "Watch directories on desktop": {
       "commandName": "Executable",
       "executablePath": "..\\..\\..\\bin\\Debug\\net6.0\\PathWatcher.exe",
-      "commandLineArgs": "-p %USERPROFILE%\\Desktop -d -l Debug -t -u %USERPROFILE%\\Desktop\\Success -i %USERPROFILE%\\Desktop\\Fail -c \"C:\\Program Files\\ConEmu\\ConEmu64.exe\" -- -run echo $p"
+      "commandLineArgs": "-p %USERPROFILE%\\Desktop -d -l Debug -t -u %USERPROFILE%\\Desktop\\Success -i %USERPROFILE%\\Desktop\\Fail -c \"C:\\Program Files\\ConEmu\\ConEmu64.exe\" "
     },
     "Run without arguments": {
       "commandName": "Executable",
