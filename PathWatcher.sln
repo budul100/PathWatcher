@@ -13,9 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatcherService", "Services\WatcherService\WatcherService.csproj", "{0D317D23-1B2C-45F3-A76C-73B2C8008D29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "Additionals\TestApp\TestApp.csproj", "{0FA8DBE7-0426-40F5-AE63-E67D3B297F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "Additionals\TestApp\TestApp.csproj", "{0FA8DBE7-0426-40F5-AE63-E67D3B297F96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Additionals", "Additionals", "{CD6C9AB8-123F-4B65-8C4C-9970A692C37D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
