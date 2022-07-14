@@ -228,7 +228,8 @@ namespace ExecutorService
         private void PostProcessingFail(string sourcePath, int exitCode)
         {
             logger.LogError(
-                "The following object was handled with failure code {exitCode}: {path}",
+                "{command} returned the failure code {exitCode} when the following object was handled: {path}",
+                options.ExecuteCommand,
                 exitCode,
                 sourcePath);
 
@@ -251,7 +252,8 @@ namespace ExecutorService
         private void PostProcessingSuccess(string sourcePath)
         {
             logger.LogInformation(
-                "The following object was handled successfully: {path}",
+                "{command} handled the following object successfully: {path}",
+                options.ExecuteCommand,
                 sourcePath);
 
             if (!string.IsNullOrWhiteSpace(options.DirectorySuccess))
